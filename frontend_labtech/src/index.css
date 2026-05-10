@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== COLORES UNA / LABTEC ===== */
+
+  --color-una-red: #8b0000;
+  --color-una-red-dark: #660000;
+  --color-una-red-mid: #a00000;
+  --color-una-red-light: #c1666b;
+
+  --color-una-navy: #081e48;
+  --color-una-navy-dark: #060f2d;
+
+  --color-una-offwhite: #f5f5f5;
+  --color-una-gray: #e5e0df;
+  --color-una-dark-gray: #4a4a4a;
+
+  /* ===== TIPOGRAFÍA ===== */
+
+  --font-sans: "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+
+  /* ===== GRADIENTES ===== */
+
+  --background-image-una-gradient:
+          linear-gradient(135deg, #8b0000 0%, #a00000 100%);
+
+  --background-image-una-gradient-nav:
+          linear-gradient(to right, #8b0000, #a00000);
+}

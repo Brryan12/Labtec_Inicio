@@ -1,0 +1,14 @@
+/* ============================================
+   PROJECTS PAGE — páginas/Projects.tsx
+   ============================================ */
+
+.projects-page      { @apply py-16 min-h-screen; }
+.projects__inner    { @apply max-w-7xl mx-auto px-4; }
+
+.projects__filters  { @apply flex flex-wrap gap-2 mb-10; }
+
+.projects__grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Reutiliza .card, .card-hover, .card-body, .badge de components */

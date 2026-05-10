@@ -1,0 +1,75 @@
+/* Tipografía — consistente con styles.css actual del LabTEc */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    color: #1a1a1a;              /* negro suave, como en las páginas UNA */
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+}
+
+a {
+    color: var(--color-red);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-red-dark);
+    text-decoration: underline;
+}
+
+/* Blockquote — migrado de styles.css actual */
+blockquote {
+    border-left: 3px solid var(--color-red-light);
+    padding: 0.75rem 1rem;
+    background-color: var(--color-offwhite);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: 1rem 0;
+    font-style: italic;
+    color: var(--color-dark-gray);
+}
+
+/* Tablas — migrado de styles.css actual */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+th {
+    background-color: var(--color-red);
+    color: white;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+tr:nth-child(even) { background-color: var(--color-offwhite); }
+tr:hover           { background-color: rgba(139,0,0,.04); transition: var(--transition); }
+
+/* Listas */
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+li { margin-bottom: 0.4rem; }

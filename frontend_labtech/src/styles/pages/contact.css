@@ -1,0 +1,30 @@
+/* ============================================
+   CONTACT PAGE — páginas/Contact.tsx
+   ============================================ */
+
+.contact-page     { @apply py-16 min-h-screen; }
+.contact__inner   { @apply max-w-7xl mx-auto px-4; }
+.contact__grid    { @apply grid grid-cols-1 lg:grid-cols-2 gap-12; }
+
+.contact-card {
+    @apply p-6 rounded-lg border;
+    background-color: var(--color-offwhite);
+    border-color: var(--color-gray);
+    margin-bottom: 1rem;
+}
+
+.contact-card__member  { @apply flex items-center gap-3 mb-3; }
+.contact-card__avatar  { @apply w-10 h-10 rounded-full flex items-center justify-center; background-color: var(--color-red); }
+.contact-card__name    { @apply font-bold; color: var(--color-red); }
+.contact-card__role    { @apply text-xs; color: var(--color-dark-gray); }
+.contact-card__details { @apply space-y-2 text-sm; color: var(--color-dark-gray); }
+.contact-card__row     { @apply flex items-center gap-2; }
+.contact-card__icon    { color: var(--color-red); flex-shrink: 0; }
+
+.contact-institution {
+    @apply p-6 rounded-lg border bg-white;
+    border-color: var(--color-gray);
+}
+.contact-institution__name { @apply font-bold mb-2; color: var(--color-red); }
+.contact-institution__link { @apply inline-block mt-4 font-medium; color: var(--color-red); transition: color 0.2s; }
+.contact-institution__link:hover { color: var(--color-red-dark); text-decoration: none; }

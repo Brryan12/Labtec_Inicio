@@ -1,0 +1,16 @@
+/* ============================================
+   BADGE — componentes/ui/Badge.tsx
+   Clases: .badge .badge-{variant}
+   ============================================ */
+
+.badge {
+    @apply inline-flex items-center;
+    @apply px-2.5 py-0.5 rounded-full;
+    @apply text-xs font-medium;
+    white-space: nowrap;
+}
+
+.badge-default { background-color: var(--color-gray); color: var(--color-dark-gray); }
+.badge-red     { background-color: rgba(139,0,0,.1);  color: var(--color-red); }
+.badge-navy    { background-color: rgba(8,30,72,.1);  color: var(--color-navy); }
+.badge-outline { border: 1px solid var(--color-red);  color: var(--color-red); }

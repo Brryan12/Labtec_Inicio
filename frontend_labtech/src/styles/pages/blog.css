@@ -1,0 +1,28 @@
+/* ============================================
+   BLOG PAGE — páginas/Blog.tsx
+   ============================================ */
+
+.blog-page      { @apply py-16 min-h-screen; }
+.blog__inner    { @apply max-w-7xl mx-auto px-4; }
+.blog__list     { @apply space-y-6 mt-10; }
+
+.blog-post {
+    @apply bg-white p-8 rounded-lg border;
+    border-color: var(--color-gray);
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+.blog-post:hover { border-color: rgba(139,0,0,.3); box-shadow: var(--shadow-sm); }
+
+.blog-post__date {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-dark-gray);
+}
+.blog-post__title {
+    @apply text-xl font-bold mt-2 mb-3;
+    color: var(--color-red);
+}
+.blog-post__excerpt  { @apply leading-relaxed; color: var(--color-dark-gray); }
+.blog-post__tags     { @apply flex gap-2 mt-4; }
+.blog-post__tag      { @apply text-xs px-2 py-1 rounded; background-color: rgba(139,0,0,.08); color: var(--color-red); }

@@ -1,0 +1,18 @@
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    @apply text-gray-800 bg-white;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Scrollbar personalizado — patrón del sitio actual */
+  ::-webkit-scrollbar        { width: 6px; }
+  ::-webkit-scrollbar-track  { background: #f1faee; }
+  ::-webkit-scrollbar-thumb  { background: #8b0000; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #660000; }
+}
