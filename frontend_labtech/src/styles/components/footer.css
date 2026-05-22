@@ -72,3 +72,8 @@
 }
 .footer__copyright a { color: inherit; transition: color 0.2s; }
 .footer__copyright a:hover { color: #d1d5db; }
+
+.footer__contact-label {
+    display: flex;
+    flex-direction: column;
+}

@@ -5,18 +5,33 @@
 /* TOPBAR — patrón .t3-top-bar de Escuela de Química / INISEFOR */
 .navbar-topbar {
     @apply hidden md:block;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 0.75rem;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.72rem;
     color: #555;
 }
 .navbar-topbar__inner {
-    @apply max-w-7xl mx-auto px-4 py-1.5;
+    @apply max-w-7xl mx-auto px-4;
+    height: 32px;
     @apply flex justify-between items-center;
 }
-.navbar-topbar__contact { @apply flex gap-4; }
-.navbar-topbar__contact a { color: inherit; transition: color 0.2s; }
-.navbar-topbar__contact a:hover { color: var(--color-red); text-decoration: none; }
+.navbar-topbar__brand {
+    font-weight: 500;
+    color: #444;
+    letter-spacing: 0.01em;
+}
+.navbar-topbar__contact {
+    @apply flex gap-5 items-center;
+}
+.navbar-topbar__contact span {
+    color: #555;
+}
+.navbar-topbar__contact a {
+    color: #555;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+.navbar-topbar__contact a:hover { color: var(--color-red); }
 
 /* NAVBAR PRINCIPAL — gradiente rojo de INISEFOR/LabTEc */
 .navbar {
@@ -26,16 +41,19 @@
     background: linear-gradient(to right, var(--color-red), var(--color-red-mid));
     box-shadow: var(--shadow-sm);
     transition: box-shadow 0.3s ease;
+    overflow: visible;
 }
-.navbar--scrolled { box-shadow: var(--shadow-lg); }
 
-.navbar__inner   { @apply max-w-7xl mx-auto px-4; }
-.navbar__content { @apply flex items-center justify-between; height: 56px; }
+navbar--scrolled { box-shadow: var(--shadow-lg); }
+
+.navbar__inner   { @apply max-w-7xl mx-auto px-4; overflow: visible; }
+.navbar__content { @apply flex items-center justify-between; height: 54px; overflow: visible;  }
 
 /* BRAND */
 .navbar__brand {
     @apply flex items-center gap-3;
     text-decoration: none;
+    margin-top: 10px
 }
 .navbar__logo {
     @apply w-8 h-8 rounded-full flex items-center justify-center;
@@ -175,4 +193,14 @@
 .navbar__mobile-link:hover {
     color: white;
     background-color: rgba(255, 255, 255, 0.12);
+}
+
+button.nav-dropdown__item {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: inherit;
 }

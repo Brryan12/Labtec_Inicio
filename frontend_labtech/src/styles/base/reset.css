@@ -41,3 +41,36 @@ body {
 ::-webkit-scrollbar-track  { background: var(--color-offwhite); }
 ::-webkit-scrollbar-thumb  { background: var(--color-red); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-red-dark); }
+
+/* Eliminar cualquier margen/padding residual del root y contenedores base */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;   /* solo horizontal, nunca vertical ni 'hidden' general */
+}
+
+.main-content {
+    flex: 1;
+    width: 100%;
+}

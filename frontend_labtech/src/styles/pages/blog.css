@@ -2,7 +2,7 @@
    BLOG PAGE — páginas/Blog.tsx
    ============================================ */
 
-.blog-page      { @apply py-16 min-h-screen; }
+.blog-page      { height: py-16 min-h-screen; }
 .blog__inner    { @apply max-w-7xl mx-auto px-4; }
 .blog__list     { @apply space-y-6 mt-10; }
 

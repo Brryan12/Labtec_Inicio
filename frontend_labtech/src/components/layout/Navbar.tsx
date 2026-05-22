@@ -12,6 +12,23 @@ export function Navbar() {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null)
     const { pathname } = useLocation()
 
+    const scrollToSection = (href: string) => {
+        const hash = href.includes('#') ? href.split('#')[1] : null
+        if (!hash) return
+
+        if (pathname !== '/') {
+            window.location.href = href
+            return
+        }
+
+        const el = document.getElementById(hash)
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+        setOpenDropdown(null)
+        setMobileOpen(false)
+    }
+
     // Efecto sombra al hacer scroll — patrón de quarto-nav actual
     useEffect(() => {
         const handler = () => setScrolled(window.scrollY > 10)
@@ -21,16 +38,6 @@ export function Navbar() {
 
     return (
         <>
-        {/* TOPBAR */}
-            <div className="navbar-topbar">
-                <div className="navbar-topbar__inner">
-                    <span>Horario: lunes a viernes — 8 AM a 12 md y de 1 a 5 pm</span>
-                    <div className="navbar-topbar__contact">
-                        <span>Tel: {LAB_INFO.phone}</span>
-                        <a href={`mailto:${LAB_INFO.email}`}>{LAB_INFO.email}</a>
-                    </div>
-                </div>
-            </div>
 
         {/* NAVBAR */}
             <header className={cn('navbar', scrolled && 'navbar--scrolled')}>
@@ -69,12 +76,19 @@ export function Navbar() {
                                                         className="nav-dropdown"
                                                     >
                                                         {item.children.map((child, index) => (
-                                                                <Link
-                                                                    key={`${child.href}-${child.label}-${index}`}
-                                                                    to={child.href}
-                                                                    className="nav-dropdown__item">
-                                                                {child.label}
-                                                            </Link>
+                                                            child.href.includes('#') ? (
+                                                                <button
+                                                                    key={child.href}
+                                                                    onClick={() => scrollToSection(child.href)}
+                                                                    className="nav-dropdown__item"
+                                                                >
+                                                                    {child.label}
+                                                                </button>
+                                                            ) : (
+                                                                <Link key={child.href} to={child.href} className="nav-dropdown__item">
+                                                                    {child.label}
+                                                                </Link>
+                                                            )
                                                         ))}
                                                     </motion.div>
                                                 )}

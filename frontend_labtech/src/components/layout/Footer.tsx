@@ -21,7 +21,13 @@ export function Footer() {
                             <a href={`mailto:${LAB_INFO.email}`}>{LAB_INFO.email}</a>
                         </li>
                         <li><MapPin size={13} className="footer__icon" /><span>Heredia, Costa Rica</span></li>
-                        <li><Clock size={13} className="footer__icon" /><span>Lun–Vie, 8 am–5 pm</span></li>
+                        <li><Clock size={13} className="footer__icon" />
+                            <div className="footer__contact-label">
+                                <span>Lunes a viernes</span>
+                                <span>8:00 a.m. — 12:00 m.d.</span>
+                                <span>1:00 p.m. — 5:00 p.m.</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 

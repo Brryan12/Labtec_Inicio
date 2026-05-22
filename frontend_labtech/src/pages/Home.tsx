@@ -10,16 +10,14 @@ import {AboutPage} from "../sections/About.tsx";
 export function Home() {
     return (
         <main>
-            <main>
-                <Hero />
-                <AboutPage />
-                <LabHighlights />
-                <div id="mision"><MissionVision /></div>
-                <div id="investigacion"><ResearchLines /></div>
-                <FeaturedProjects />
-                <div id="equipo"><Collaborators /></div>
-                <ContactBanner />
-            </main>
+            <Hero />
+            <section id="about"><AboutPage /></section>
+            <LabHighlights />
+            <section id="mision"><MissionVision /></section>
+            <section id="investigacion"><ResearchLines /></section>
+            <FeaturedProjects />
+            <div id="equipo"><Collaborators /></div>
+            <ContactBanner />
         </main>
     )
 }

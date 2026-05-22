@@ -47,7 +47,9 @@ export function Hero() {
                             <Link to="/proyectos">Ver Proyectos</Link>
                         </Button>
                         <Button size="lg" className="btn-hero-primary" >
-                            <Link to="/#mision">Conocer el Lab</Link>
+                            <a href="#about" className="hero__button">
+                                Conocer más
+                            </a>
                         </Button>
                     </motion.div>
                 </motion.div>

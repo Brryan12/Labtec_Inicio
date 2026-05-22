@@ -25,7 +25,7 @@ export function Projects() {
         : PROJECTS.filter((p) => p.category === active)
 
     return (
-        <main className="py-16 min-h-screen">
+        <main className="projects-page">
             {/* HERO de página — patrón de .ja-masthead de INISEFOR/EDECA */}
             <div className="page-hero">
                 <div className="page-hero__inner">

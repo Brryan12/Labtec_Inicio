@@ -2,7 +2,7 @@
    CONTACT PAGE — páginas/Contact.tsx
    ============================================ */
 
-.contact-page     { @apply py-16 min-h-screen; }
+.contact-page     { height: py-16 min-h-screen; }
 .contact__inner   { @apply max-w-7xl mx-auto px-4; }
 .contact__grid    { @apply grid grid-cols-1 lg:grid-cols-2 gap-12; }
 
