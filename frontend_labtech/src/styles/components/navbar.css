@@ -47,15 +47,15 @@
 navbar--scrolled { box-shadow: var(--shadow-lg); }
 
 .navbar__inner   { @apply max-w-7xl mx-auto px-4; overflow: visible; position: relative; }
-.navbar__content { @apply flex items-center justify-between; height: 200px; overflow: visible; padding-left: 420px; }
+.navbar__content { @apply flex items-center justify-between; height: 170px; overflow: visible; padding-left: 220px; }
 
 /* BRAND */
 .navbar__brand {
     @apply flex items-center gap-2;
     text-decoration: none;
     position: absolute; /* colocar al borde izquierdo del header */
-    left: 1rem;
-    top: 56%; /* bajado ligeramente para alinear visualmente */
+    left: 1rem; /* logos pegados al borde izquierdo */
+    top: 50%; /* subido para que LABTEC quede más arriba */
     transform: translateY(-50%);
     z-index: 70;
 }
@@ -65,38 +65,51 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
     gap: 0.5rem;
 }
 .navbar__brand-title {
-    color: white;
+    color: white !important;
     font-weight: 900;
-    font-size: 5rem; /* más grande y llamativo */
-    margin-left: 1rem;
-    margin-top: -15px; /* bajar solo la palabra LABTEC sin mover los logos */
-    letter-spacing: 0.04em;
+    font-size: 4rem; /* más grande y alargado */
+    margin-left: 0; 
+    margin-top: 0; 
+    letter-spacing: 0.08em; /* más espaciado para alargar visualmente */
+    display: inline-block;
+    padding: 0 4rem; /* hace el título más alargado */
     text-transform: uppercase;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.45);
-    transition: transform 0.15s ease, color 0.15s ease;
+    text-shadow: none; /* quitar sombra para que no destaque en otro color */
 }
 
+.media-adjust-1 {}
 @media (max-width: 1024px) {
-    .navbar__content { height: 170px; padding-left: 320px; }
-    .navbar__logo-labtec { height: 120px; }
+    .navbar__content { height: 150px; padding-left: 180px; }
     .navbar__brand-title { font-size: 1.8rem; }
 }
 
 @media (max-width: 768px) {
-    .navbar__content { height: 140px; padding-left: 220px; }
-    .navbar__logo-labtec { height: 100px; }
+    .navbar__content { height: 130px; padding-left: 140px; }
     .navbar__brand-title { font-size: 1.4rem; margin-left: 0.5rem; margin-top: 6px; }
 }
 
-.navbar__brand-title:hover { transform: translateY(-2px); color: #ffefef; }
+.navbar__brand-title:hover { /* no-op: keep title identical on hover */ }
+
+
+.navbar__brand,
+.navbar__brand:link,
+.navbar__brand:visited,
+.navbar__brand:hover,
+.navbar__brand:focus,
+.navbar__brand:active {
+    background: transparent !important;
+    color: white !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
 .navbar__logo-una {
-    height: 96px; /* doble del tamaño anterior */
+    height: 80px; /* doble del tamaño anterior */
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
 }
 .navbar__logo-labtec {
-    height: 140px; /* aumentado para destacar */
+    height: 110px; /* aumentado para destacar */
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
@@ -116,19 +129,20 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
 }
 
 @media (max-width: 1024px) {
-    .navbar__content { height: 110px; padding-left: 260px; }
-    .navbar__logo-una { height: 78px; }
+    .navbar__content { height: 150px; padding-left: 180px; }
+    .navbar__brand-title { font-size: 2.4rem; padding: 0 0.6rem; }
     .navbar__logo-labtec { height: 74px; }
 }
 
 @media (max-width: 768px) {
-    .navbar__content { height: 90px; padding-left: 180px; }
+    .navbar__content { height: 130px; padding-left: 140px; }
+    .navbar__brand-title { font-size: 1.6rem; padding: 0 0.4rem; margin-left: 0.5rem; margin-top: 6px; }
     .navbar__logo-una { height: 64px; }
     .navbar__logo-labtec { height: 60px; }
 }
 
 @media (max-width: 480px) {
-    .navbar__content { height: 72px; padding-left: 20px; }
+    .navbar__content { height: 64px; padding-left: 20px; }
     .navbar__logo-una { height: 48px; }
     .navbar__logo-labtec { height: 44px; }
 }
@@ -140,13 +154,25 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
     border-left: 1px solid rgba(255,255,255,.2);
     margin-left: 0.5rem;
     padding-left: 0.75rem;
+    position: absolute; /* positioned relative to header */
+    right: 0.5rem; /* near the page edge */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 70;
+}
+
+/* Reduce gap between the two external logos so they sit snug in the corner */
+.navbar__external .navbar__una, .navbar__external .navbar__inisefor {
+    margin-right: 0.25rem;
+    padding-right: 0.25rem;
 }
 
 .nav-item        { position: relative; }
 
 .nav-link {
-    @apply flex items-center gap-1 px-4 text-base font-medium;
-    height: 64px;
+    @apply flex items-center gap-1 px-4 font-medium;
+    font-size: 1.125rem; /* 18px - slightly larger */
+    height: 72px; /* give a bit more vertical space */
     color: rgba(255,255,255,.9);
     background: transparent;
     border: none;
@@ -207,30 +233,40 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
     border-right: 1px solid rgba(255,255,255,.12);
 }
 .navbar__inisefor__img {
-    height: 48px;
+    height: 75px; /* ligeramente más pequeño */
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
 }
 
 /* UNA logo in external area */
 .navbar__una {
     display: inline-flex;
     align-items: center;
-    margin-right: 0.75rem;
-    padding-right: 0.5rem;
+    margin-right: 0.5rem; /* un poco más cerca */
+    padding-right: 0.4rem;
     border-right: 1px solid rgba(255,255,255,.12);
 }
 .navbar__una__img {
-    height: 48px;
+    height: 75px; /* ligeramente más pequeño */
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+}
+
+@media (max-width: 1024px) {
+    .navbar__inisefor__img { height: 80px; }
+    .navbar__una__img { height: 80px; }
 }
 
 @media (max-width: 768px) {
-    .navbar__inisefor__img { height: 36px; }
-    .navbar__una__img { height: 36px; }
+    .navbar__inisefor__img { height: 64px; }
+    .navbar__una__img { height: 64px; }
+}
+
+@media (max-width: 480px) {
+    .navbar__inisefor__img { height: 44px; }
+    .navbar__una__img { height: 44px; }
 }
 .nav-external:hover { color: white; }
 
@@ -281,7 +317,7 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
 .navbar__mobile-link {
     display: block;
     padding: 0.6rem 0.75rem;
-    font-size: 0.95rem;
+    font-size: 1rem; /* 16px on mobile */
     font-weight: 500;
     color: rgba(255, 255, 255, 0.92);
     text-decoration: none;

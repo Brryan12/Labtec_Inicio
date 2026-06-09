@@ -14,12 +14,19 @@ export const NAV_ITEMS: NavItem[] = [
     {
         label: 'Trabajos',
         href: '#',
-        children: [],
+        children: [
+            { label: 'Historico Fuegos', href: '/trabajos/historico-fuegos' },
+            { label: 'Dash-Board Cafe 2021-2022', href: '/trabajos/dashboard-cafe-2021-2022' },
+        ],
     },
     {
         label: 'Ejercicios Reproducibles',
         href: '#',
-        children: [],
+        children: [
+            { label: 'El Niño Oscilación del Sur (ENOS)', href: '/ejercicios/enos' },
+            { label: 'Tutorial Copernicus Incendio', href: '/ejercicios/tutorial-copernicus-incendio' },
+            { label: 'Ecosistema Copernicus', href: '/ejercicios/ecosistema-copernicus' },
+        ],
     },
     { label: 'Blog', href: '/blog' },
     { label: 'Contacto', href: '/contacto' },
