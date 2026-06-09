@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, ExternalLink, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { NAV_ITEMS, EXTERNAL_LINKS } from '../../data/navigation'
+import { NAV_ITEMS } from '../../data/navigation'
 import { LAB_INFO } from '../../data/lab'
 import {cn} from "../../utils/cn";
-// logoLabtec removed — only text label used now
+import logoLabtec from '../../assets/logos/New_transp_labtec.png'
 import logoUna from '../../assets/logos/LOGO-UNA1-Blanco (1).png'
 import logoInisefor from '../../assets/logos/INISEFOR_LogoTransparente..png'
 
@@ -49,7 +49,7 @@ export function Navbar() {
                         <div className="navbar__logos" aria-hidden="true">
                             {/* logo removed — keep space for text label only */}
                         </div>
-                    <div className="navbar__brand-title">LABTEC</div>
+                    <div className="navbar__brand-title">LabTEc</div>
                 </Link>
                 <nav className="navbar__inner">
                     <div className="navbar__content">
@@ -76,25 +76,49 @@ export function Navbar() {
                                                         transition={{ duration: 0.15 }}
                                                         className="nav-dropdown"
                                                     >
-                                                        {item.children.map((child, index) => (
-                                                            child.href.includes('#') ? (
-                                                                <button
-                                                                    key={child.href}
-                                                                    onClick={() => scrollToSection(child.href)}
-                                                                    className="nav-dropdown__item"
-                                                                >
-                                                                    {child.label}
-                                                                </button>
-                                                            ) : (
+                                                        {item.children.map((child) => {
+                                                            if (child.href.includes('#')) {
+                                                                return (
+                                                                    <button
+                                                                        key={child.href}
+                                                                        onClick={() => scrollToSection(child.href)}
+                                                                        className="nav-dropdown__item"
+                                                                    >
+                                                                        {child.label}
+                                                                    </button>
+                                                                );
+                                                            }
+                                                            if (child.external || child.href.includes('.html')) {
+                                                                return (
+                                                                    <a
+                                                                        key={child.href}
+                                                                        href={child.href}
+                                                                        className="nav-dropdown__item"
+                                                                    >
+                                                                        {child.label}
+                                                                    </a>
+                                                                );
+                                                            }
+                                                            return (
                                                                 <Link key={child.href} to={child.href} className="nav-dropdown__item">
                                                                     {child.label}
                                                                 </Link>
-                                                            )
-                                                        ))}
+                                                            );
+                                                        })}
                                                     </motion.div>
                                                 )}
                                             </AnimatePresence>
                                         </>
+                                    ) : item.external || item.href.includes('.html') ? (
+                                        <a
+                                            href={item.href}
+                                            className={cn(
+                                                'nav-link',
+                                                pathname === item.href && 'nav-link--active'
+                                            )}
+                                        >
+                                            {item.label}
+                                        </a>
                                     ) : (
                                         <Link
                                             to={item.href}
@@ -122,11 +146,14 @@ export function Navbar() {
 
                 {/* External logos: positioned at page right edge */}
                 <div className="navbar__external">
-                    <a href="https://www.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__una">
-                        <img src={logoUna} alt="UNA" className="navbar__una__img" />
-                    </a>
+                    <Link to="/" className="navbar__labtec" aria-label="LabTEc - Inicio">
+                        <img src={logoLabtec} alt="LabTEc" className="navbar__labtec__img" />
+                    </Link>
                     <a href="https://www.inisefor.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__inisefor">
                         <img src={logoInisefor} alt="INISEFOR" className="navbar__inisefor__img" />
+                    </a>
+                    <a href="https://www.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__una">
+                        <img src={logoUna} alt="UNA" className="navbar__una__img" />
                     </a>
                 </div>
 
@@ -143,26 +170,49 @@ export function Navbar() {
                                 item.children ? (
                                     <div key={item.label} className="navbar__mobile-group">
                                         <span className="navbar__mobile-group-label">{item.label}</span>
-                                        {item.children.map((child, index) => (
-                                            <Link
-                                                key={`${child.href}-${child.label}-${index}`}
-                                                to={child.href}
-                                                onClick={() => setMobileOpen(false)}
-                                                className="navbar__mobile-child"
-                                            >
-                                                {child.label}
-                                            </Link>
-                                        ))}
+                                        {item.children.map((child, index) => {
+                                            const isExt = child.external || child.href.includes('.html');
+                                            return isExt ? (
+                                                <a
+                                                    key={`${child.href}-${child.label}-${index}`}
+                                                    href={child.href}
+                                                    onClick={() => setMobileOpen(false)}
+                                                    className="navbar__mobile-child"
+                                                >
+                                                    {child.label}
+                                                </a>
+                                            ) : (
+                                                <Link
+                                                    key={`${child.href}-${child.label}-${index}`}
+                                                    to={child.href}
+                                                    onClick={() => setMobileOpen(false)}
+                                                    className="navbar__mobile-child"
+                                                >
+                                                    {child.label}
+                                                </Link>
+                                            );
+                                        })}
                                     </div>
                                 ) : (
-                                    <Link
-                                        key={`${item.href}-${item.label}`}
-                                        to={item.href}
-                                        onClick={() => setMobileOpen(false)}
-                                        className={cn('navbar__mobile-link', pathname === item.href && 'nav-link--active')}
-                                    >
-                                        {item.label}
-                                    </Link>
+                                    item.external || item.href.includes('.html') ? (
+                                        <a
+                                            key={`${item.href}-${item.label}`}
+                                            href={item.href}
+                                            onClick={() => setMobileOpen(false)}
+                                            className={cn('navbar__mobile-link', pathname === item.href && 'nav-link--active')}
+                                        >
+                                            {item.label}
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            key={`${item.href}-${item.label}`}
+                                            to={item.href}
+                                            onClick={() => setMobileOpen(false)}
+                                            className={cn('navbar__mobile-link', pathname === item.href && 'nav-link--active')}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    )
                                 )
                             )}
                         </motion.div>

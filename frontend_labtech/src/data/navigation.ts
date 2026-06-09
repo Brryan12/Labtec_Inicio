@@ -6,8 +6,8 @@ export const NAV_ITEMS: NavItem[] = [
         label: 'Laboratorio',
         href: '#',
         children: [
-            { label: 'Misión y Visión',         href: '/#mision' },
-            { label: 'Equipo',                  href: '/#equipo' },
+            { label: 'Misión y Visión', href: '/#mision' },
+            { label: 'Equipo', href: '/#equipo' },
             { label: 'Líneas de Investigación', href: '/#investigacion' }
         ],
     },
@@ -15,17 +15,17 @@ export const NAV_ITEMS: NavItem[] = [
         label: 'Trabajos',
         href: '#',
         children: [
-            { label: 'Historico Fuegos', href: '/trabajos/historico-fuegos' },
-            { label: 'Dash-Board Cafe 2021-2022', href: '/trabajos/dashboard-cafe-2021-2022' },
+            { label: 'Historico fuegos', href: './historico-fuegos-acg/scripts/', external: true },
+            { label: 'DashBoard Cafe 2021-2022', href: './DashBoardCafe/', external: true },
         ],
     },
     {
-        label: 'Ejercicios Reproducibles',
+        label: 'Ejercicios reproducibles',
         href: '#',
         children: [
-            { label: 'El Niño Oscilación del Sur (ENOS)', href: '/ejercicios/enos' },
-            { label: 'Tutorial Copernicus Incendio', href: '/ejercicios/tutorial-copernicus-incendio' },
-            { label: 'Ecosistema Copernicus', href: '/ejercicios/ecosistema-copernicus' },
+            { label: 'El Niño-Oscilación del Sur (ENOS)', href: './enos/', external: true },
+            { label: 'Tutorial Copernicus incendio', href: './CDSE/CDSE_caso_incendio', external: true },
+            { label: 'Ecosistema Copernicus', href: './CDSE/Explorar_colecciones', external: true },
         ],
     },
     { label: 'Blog', href: '/blog' },
