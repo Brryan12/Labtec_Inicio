@@ -12,7 +12,7 @@
 }
 .navbar-topbar__inner {
     @apply max-w-7xl mx-auto px-4;
-    height: 32px;
+    height: 26px;
     @apply flex justify-between items-center;
 }
 .navbar-topbar__brand {
@@ -47,7 +47,7 @@
 navbar--scrolled { box-shadow: var(--shadow-lg); }
 
 .navbar__inner   { @apply max-w-7xl mx-auto px-4; overflow: visible; position: relative; }
-.navbar__content { @apply flex items-center justify-between; height: 170px; overflow: visible; padding-left: 220px; }
+.navbar__content { @apply flex items-center justify-between; height: 136px; overflow: visible; padding-left: 176px; }
 
 /* BRAND */
 .navbar__brand {
@@ -67,25 +67,29 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
 .navbar__brand-title {
     color: white !important;
     font-weight: 900;
-    font-size: 2rem; /* más grande y alargado */
-    margin-left: 0; 
-    margin-top: 0; 
-    letter-spacing: 0.08em; /* más espaciado para alargar visualmente */
+    font-size: 1.6rem; /* reduced 20% */
+    margin-left: 0;
+    margin-top: 0;
+    letter-spacing: 0.08em;
     display: inline-block;
-    padding: 0 4rem; /* hace el título más alargado */
+    padding: 0 0.8rem;
     text-transform: uppercase;
-    text-shadow: none; /* quitar sombra para que no destaque en otro color */
+    text-shadow: none;
+    max-width: 17.6rem; /* 22rem * 0.8 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .media-adjust-1 {}
 @media (max-width: 1024px) {
-    .navbar__content { height: 150px; padding-left: 180px; }
-    .navbar__brand-title { font-size: 1.8rem; }
+    .navbar__content { height: 120px; padding-left: 144px; flex-wrap: wrap; }
+    .navbar__brand-title { font-size: 1.44rem; }
 }
 
 @media (max-width: 768px) {
-    .navbar__content { height: 130px; padding-left: 140px; }
-    .navbar__brand-title { font-size: 1.4rem; margin-left: 0.5rem; margin-top: 6px; }
+    .navbar__content { height: 104px; padding-left: 112px; flex-wrap: wrap; }
+    .navbar__brand-title { font-size: 1.12rem; margin-left: 0.5rem; margin-top: 6px; }
 }
 
 .navbar__brand-title:hover { /* no-op: keep title identical on hover */ }
@@ -103,13 +107,13 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
     text-decoration: none !important;
 }
 .navbar__logo-una {
-    height: 80px; /* doble del tamaño anterior */
+    height: 64px; /* reduced 20% */
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
 }
 .navbar__logo-labtec {
-    height: 110px; /* aumentado para destacar */
+    height: 88px; /* reduced 20% */
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
@@ -129,22 +133,22 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
 }
 
 @media (max-width: 1024px) {
-    .navbar__content { height: 150px; padding-left: 180px; }
-    .navbar__brand-title { font-size: 2.4rem; padding: 0 0.6rem; }
-    .navbar__logo-labtec { height: 74px; }
+    .navbar__content { height: 120px; padding-left: 144px; }
+    .navbar__brand-title { font-size: 1.92rem; padding: 0 0.48rem; }
+    .navbar__logo-labtec { height: 59px; }
 }
 
 @media (max-width: 768px) {
-    .navbar__content { height: 130px; padding-left: 140px; }
-    .navbar__brand-title { font-size: 1.6rem; padding: 0 0.4rem; margin-left: 0.5rem; margin-top: 6px; }
-    .navbar__logo-una { height: 64px; }
-    .navbar__logo-labtec { height: 60px; }
+    .navbar__content { height: 104px; padding-left: 112px; }
+    .navbar__brand-title { font-size: 1.28rem; padding: 0 0.32rem; margin-left: 0.5rem; margin-top: 6px; }
+    .navbar__logo-una { height: 51px; }
+    .navbar__logo-labtec { height: 48px; }
 }
 
 @media (max-width: 480px) {
-    .navbar__content { height: 64px; padding-left: 20px; }
-    .navbar__logo-una { height: 48px; }
-    .navbar__logo-labtec { height: 44px; }
+    .navbar__content { height: 51px; padding-left: 16px; }
+    .navbar__logo-una { height: 38px; }
+    .navbar__logo-labtec { height: 35px; }
 }
 
 /* NAV ITEMS */
@@ -172,7 +176,7 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
 .nav-link {
     @apply flex items-center gap-1 px-4 font-medium;
     font-size: 1.125rem; /* 18px - slightly larger */
-    height: 72px; /* give a bit more vertical space */
+    height: 58px; /* reduced 20% */
     color: rgba(255,255,255,.9);
     background: transparent;
     border: none;
@@ -233,7 +237,7 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
     border-right: 1px solid rgba(255,255,255,.12);
 }
 .navbar__inisefor__img {
-    height: 75px; /* ligeramente más pequeño */
+    height: 60px; /* reduced 20% */
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
@@ -248,25 +252,25 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
     border-right: 1px solid rgba(255,255,255,.12);
 }
 .navbar__una__img {
-    height: 75px; /* ligeramente más pequeño */
+    height: 60px; /* reduced 20% */
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
 }
 
 @media (max-width: 1024px) {
-    .navbar__inisefor__img { height: 80px; }
-    .navbar__una__img { height: 80px; }
-}
-
-@media (max-width: 768px) {
     .navbar__inisefor__img { height: 64px; }
     .navbar__una__img { height: 64px; }
 }
 
+@media (max-width: 768px) {
+    .navbar__inisefor__img { height: 51px; }
+    .navbar__una__img { height: 51px; }
+}
+
 @media (max-width: 480px) {
-    .navbar__inisefor__img { height: 44px; }
-    .navbar__una__img { height: 44px; }
+    .navbar__inisefor__img { height: 35px; }
+    .navbar__una__img { height: 35px; }
 }
 .nav-external:hover { color: white; }
 

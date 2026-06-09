@@ -9,7 +9,7 @@
 }
 
 .footer__grid {
-    @apply max-w-7xl mx-auto px-4 py-12;
+    @apply max-w-7xl mx-auto px-4 py-8; /* reduced vertical padding to shrink container */
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8;
 }
 
@@ -62,7 +62,7 @@
 
 /* COPYRIGHT — patrón exacto de las páginas UNA */
 .footer__copyright {
-    @apply border-t py-4 px-6;
+    @apply border-t py-3 px-6; /* slightly reduced */
     border-color: rgba(255,255,255,0.04);
     background-color: #071022; /* slightly darker than footer */
     @apply max-w-7xl mx-auto;

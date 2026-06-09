@@ -149,7 +149,7 @@
 
 /* ---- CONTACT BANNER ---- */
 .contact-banner {
-    @apply py-16;
+    @apply py-12; /* reduced vertical padding to shrink the red contact area */
     background: linear-gradient(135deg, var(--color-red) 0%, var(--color-red-mid) 60%, var(--color-red-dark) 100%);
 }
 .contact-banner__inner { @apply max-w-7xl mx-auto px-4 text-center; }
