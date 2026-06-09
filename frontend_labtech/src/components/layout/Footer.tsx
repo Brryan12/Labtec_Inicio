@@ -51,8 +51,14 @@ export function Footer() {
             </div>
 
             <div className="footer__copyright">
-                <span>Copyright © {year} LabTEc — INISEFOR. <a href="https://www.una.ac.cr">Universidad Nacional.</a></span>
-                <span>Licencia: CC BY 4.0</span>
+                <div className="footer__copyright-left">
+                    <span>© {year} <strong>LabTEc</strong> — INISEFOR</span>
+                    <span className="footer__institution">· <a href="https://www.una.ac.cr" target="_blank" rel="noopener noreferrer">Universidad Nacional</a></span>
+                </div>
+
+                <div className="footer__copyright-right">
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Licencia CC BY 4.0</a>
+                </div>
             </div>
         </footer>
     )

@@ -4,8 +4,8 @@
    ============================================ */
 
 .footer {
-    background-color: #111827;   /* gray-900 */
-    color: #d1d5db;              /* gray-300 */
+    background-color: #0b1220;   /* dark blue-gray, less black */
+    color: #cbd5e1;              /* slightly warmer gray */
 }
 
 .footer__grid {
@@ -62,16 +62,25 @@
 
 /* COPYRIGHT — patrón exacto de las páginas UNA */
 .footer__copyright {
-    @apply border-t py-3 px-4;
-    border-color: #374151;   /* gray-700 */
-    background-color: #030712; /* gray-950 */
+    @apply border-t py-4 px-6;
+    border-color: rgba(255,255,255,0.04);
+    background-color: #071022; /* slightly darker than footer */
     @apply max-w-7xl mx-auto;
-    @apply flex flex-col sm:flex-row justify-between items-center gap-1;
-    font-size: 0.75rem;
-    color: #6b7280;          /* gray-500 */
+    @apply flex flex-col sm:flex-row justify-between items-center gap-2;
+    font-size: 0.9rem;
+    color: #94a3b8;          /* muted gray */
 }
-.footer__copyright a { color: inherit; transition: color 0.2s; }
-.footer__copyright a:hover { color: #d1d5db; }
+.footer__copyright a { color: #e6eef8; transition: color 0.15s; text-decoration: underline; }
+.footer__copyright a:hover { color: #ffffff; }
+
+.footer__copyright-left { display: flex; align-items: center; gap: 0.5rem; }
+.footer__copyright-left strong { color: #ffffff; }
+.footer__institution { color: #94a3b8; }
+.footer__copyright-right { margin-top: 0.25rem; }
+
+@media (min-width: 640px) {
+    .footer__copyright-right { margin-top: 0; }
+}
 
 .footer__contact-label {
     display: flex;

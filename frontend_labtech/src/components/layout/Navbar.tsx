@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { NAV_ITEMS, EXTERNAL_LINKS } from '../../data/navigation'
 import { LAB_INFO } from '../../data/lab'
 import {cn} from "../../utils/cn";
+import logoLabtec from '../../assets/logos/New_transp_labtec.png'
+import logoUna from '../../assets/logos/LOGO-UNA1-Blanco (1).png'
+import logoInisefor from '../../assets/logos/INISEFOR_LogoTransparente..png'
 
 export function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false)
@@ -41,17 +44,15 @@ export function Navbar() {
 
         {/* NAVBAR */}
             <header className={cn('navbar', scrolled && 'navbar--scrolled')}>
+                {/* BRAND placed outside inner container to avoid overlapping page content */}
+                <Link to="/" className="navbar__brand" aria-label={`${LAB_INFO.name} - Inicio`}>
+                        <div className="navbar__logos">
+                            <img src={logoLabtec} alt="LabTEc" className="navbar__logo-labtec" />
+                        </div>
+                    <div className="navbar__brand-title">LABTEC</div>
+                </Link>
                 <nav className="navbar__inner">
                     <div className="navbar__content">
-
-                        {/* BRAND */}
-                        <Link to="/" className="navbar__brand">
-                            <div className="navbar__logo">UNA</div>
-                            <div className="navbar__brand-text">
-                                <span className="navbar__title">LabTEc</span>
-                                <p className="navbar__subtitle">INISEFOR — Universidad Nacional</p>
-                            </div>
-                        </Link>
 
                         {/* NAV DESKTOP */}
                         <div className="navbar__nav">
@@ -112,11 +113,12 @@ export function Navbar() {
 
                         {/* EXTERNOS */}
                         <div className="navbar__external">
-                            {EXTERNAL_LINKS.map((link) => (
-                                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="nav-external">
-                                    {link.label} <ExternalLink size={10} />
-                                </a>
-                            ))}
+                            <a href="https://www.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__una">
+                                <img src={logoUna} alt="UNA" className="navbar__una__img" />
+                            </a>
+                            <a href="https://www.inisefor.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__inisefor">
+                                <img src={logoInisefor} alt="INISEFOR" className="navbar__inisefor__img" />
+                            </a>
                         </div>
 
                         {/* HAMBURGER */}
@@ -125,6 +127,8 @@ export function Navbar() {
                         </button>
                     </div>
                 </nav>
+
+                {/* Removed corner logo — both logos now on the left brand area */}
 
                 {/* MOBILE */}
                 <AnimatePresence>

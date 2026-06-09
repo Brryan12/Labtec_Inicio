@@ -12,17 +12,14 @@ export const NAV_ITEMS: NavItem[] = [
         ],
     },
     {
-        label: 'Proyectos',
-        href: '/proyectos',
+        label: 'Trabajos',
+        href: '#',
+        children: [],
     },
     {
-        label: 'Recursos',
+        label: 'Ejercicios Reproducibles',
         href: '#',
-        children: [
-            { label: 'Geoprocesamiento', href: '#' }, // Pendiente -> /recursos/geoprocesamiento
-            { label: 'Ejercicios Reproducibles', href: '#' }, // Pendiente -> /recursos/ejercicios
-            { label: 'Trabajos', href: '#' }, // Pendiente -> /recursos/trabajos
-        ],
+        children: [],
     },
     { label: 'Blog', href: '/blog' },
     { label: 'Contacto', href: '/contacto' },

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { ChevronDown, Satellite } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { Button } from '../components/ui/Button'
 import { LAB_INFO } from '../data/lab'
 import { fadeInUp, staggerContainer } from '../animations/variants'
@@ -42,16 +41,13 @@ export function Hero() {
                         {LAB_INFO.description}
                     </motion.p>
 
-                    <motion.div variants={fadeInUp} className="hero__actions">
-                        <Button size="lg" className="btn-hero-primary" >
-                            <Link to="/proyectos">Ver Proyectos</Link>
-                        </Button>
-                        <Button size="lg" className="btn-hero-primary" >
-                            <a href="#about" className="hero__button">
-                                Conocer más
-                            </a>
-                        </Button>
-                    </motion.div>
+                   <motion.div variants={fadeInUp} className="hero__actions">
+    <Button size="lg" className="btn-hero-primary" >
+        <a href="#about" className="hero__button">
+            Conocer más
+        </a>
+    </Button>
+</motion.div>
                 </motion.div>
             </div>
 

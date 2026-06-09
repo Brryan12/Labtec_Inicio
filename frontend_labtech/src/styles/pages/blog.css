@@ -3,15 +3,18 @@
    ============================================ */
 
 .blog-page      { height: py-16 min-h-screen; }
-.blog__inner    { @apply max-w-7xl mx-auto px-4; }
+.blog__inner    { @apply max-w-7xl mx-auto px-4; padding-bottom: 6rem; }
 .blog__list     { @apply space-y-6 mt-10; }
 
 .blog-post {
-    @apply bg-white p-8 rounded-lg border;
-    border-color: var(--color-gray);
-    transition: border-color 0.25s, box-shadow 0.25s;
+    @apply bg-white p-8 rounded-lg;
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+    border: 1px solid rgba(15,23,42,0.04);
+    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+    transition: box-shadow 0.25s, transform 0.15s;
 }
-.blog-post:hover { border-color: rgba(139,0,0,.3); box-shadow: var(--shadow-sm); }
+.blog-post:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,23,42,0.08); }
 
 .blog-post__date {
     font-size: 0.7rem;
