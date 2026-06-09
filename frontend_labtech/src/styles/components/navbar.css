@@ -67,7 +67,7 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
 .navbar__brand-title {
     color: white !important;
     font-weight: 900;
-    font-size: 4rem; /* más grande y alargado */
+    font-size: 2rem; /* más grande y alargado */
     margin-left: 0; 
     margin-top: 0; 
     letter-spacing: 0.08em; /* más espaciado para alargar visualmente */
