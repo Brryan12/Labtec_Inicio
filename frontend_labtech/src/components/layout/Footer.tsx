@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom'
 import { Mail, Phone, Clock, MapPin, ExternalLink } from 'lucide-react'
 import { LAB_INFO } from '../../data/lab'
 
+import logoLabtec from '../../assets/logos/New_transp_labtec.png'
+import logoUna from '../../assets/logos/LOGO-UNA1-Blanco (1).png'
+import logoInisefor from '../../assets/logos/INISEFOR_LogoTransparente.png'
+
 export function Footer() {
     const year = new Date().getFullYear()
 
@@ -59,6 +63,18 @@ export function Footer() {
                 <div className="footer__copyright-right">
                     <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Licencia CC BY 4.0</a>
                 </div>
+            </div>
+
+            <div className="footer__logos">
+                <Link to="/">
+                    <img src={logoLabtec} alt="LabTEc" className="footer__logo-img" />
+                </Link>
+                <a href="https://www.inisefor.una.ac.cr" target="_blank" rel="noopener noreferrer">
+                    <img src={logoInisefor} alt="INISEFOR" className="footer__logo-img" />
+                </a>
+                <a href="https://www.una.ac.cr" target="_blank" rel="noopener noreferrer">
+                    <img src={logoUna} alt="UNA" className="footer__logo-img" />
+                </a>
             </div>
         </footer>
     )

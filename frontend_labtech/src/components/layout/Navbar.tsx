@@ -7,7 +7,7 @@ import { LAB_INFO } from '../../data/lab'
 import {cn} from "../../utils/cn";
 import logoLabtec from '../../assets/logos/New_transp_labtec.png'
 import logoUna from '../../assets/logos/LOGO-UNA1-Blanco (1).png'
-import logoInisefor from '../../assets/logos/INISEFOR_LogoTransparente..png'
+import logoInisefor from '../../assets/logos/INISEFOR_LogoTransparente.png'
 
 export function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false)
@@ -44,15 +44,13 @@ export function Navbar() {
 
         {/* NAVBAR */}
             <header className={cn('navbar', scrolled && 'navbar--scrolled')}>
-                {/* BRAND placed outside inner container to avoid overlapping page content */}
-                <Link to="/" className="navbar__brand" aria-label={`${LAB_INFO.name} - Inicio`}>
-                        <div className="navbar__logos" aria-hidden="true">
-                            {/* logo removed — keep space for text label only */}
-                        </div>
-                    <div className="navbar__brand-title">LabTEc</div>
-                </Link>
                 <nav className="navbar__inner">
                     <div className="navbar__content">
+
+                        {/* BRAND — absoluto en desktop, en flujo en móvil */}
+                        <Link to="/" className="navbar__brand" aria-label={`${LAB_INFO.name} - Inicio`}>
+                            <div className="navbar__brand-title">LabTEc</div>
+                        </Link>
 
                         {/* NAV DESKTOP */}
                         <div className="navbar__nav">
@@ -135,7 +133,17 @@ export function Navbar() {
                             ))}
                         </div>
 
-                        {/* EXTERNOS (moved out of centered inner to be positioned at page edge) */}
+                        <div className="navbar__external">
+                            <Link to="/" className="navbar__labtec" aria-label="LabTEc - Inicio">
+                                <img src={logoLabtec} alt="LabTEc" className="navbar__labtec__img" />
+                            </Link>
+                            <a href="https://www.inisefor.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__inisefor">
+                                <img src={logoInisefor} alt="INISEFOR" className="navbar__inisefor__img" />
+                            </a>
+                            <a href="https://www.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__una">
+                                <img src={logoUna} alt="UNA" className="navbar__una__img" />
+                            </a>
+                        </div>
 
                         {/* HAMBURGER */}
                         <button className="navbar__toggle" onClick={() => setMobileOpen((v) => !v)} aria-label="Menú">
@@ -143,19 +151,6 @@ export function Navbar() {
                         </button>
                     </div>
                 </nav>
-
-                {/* External logos: positioned at page right edge */}
-                <div className="navbar__external">
-                    <Link to="/" className="navbar__labtec" aria-label="LabTEc - Inicio">
-                        <img src={logoLabtec} alt="LabTEc" className="navbar__labtec__img" />
-                    </Link>
-                    <a href="https://www.inisefor.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__inisefor">
-                        <img src={logoInisefor} alt="INISEFOR" className="navbar__inisefor__img" />
-                    </a>
-                    <a href="https://www.una.ac.cr" target="_blank" rel="noopener noreferrer" className="navbar__una">
-                        <img src={logoUna} alt="UNA" className="navbar__una__img" />
-                    </a>
-                </div>
 
                 {/* MOBILE */}
                 <AnimatePresence>
