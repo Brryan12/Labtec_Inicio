@@ -38,7 +38,7 @@ export function Footer() {
                 <div className="footer__col">
                     <h3 className="footer__heading">Navegación</h3>
                     <ul className="footer__nav-list">
-                        {[['Inicio','/'],['Proyectos','/proyectos'],['Blog','/blog'],['Contacto','/contacto']].map(([l,h]) => (
+                        {[['Inicio','/'],['Blog','/blog'],['Contacto','/contacto']].map(([l,h]) => (
                             <li key={h}><Link to={h}>{l}</Link></li>
                         ))}
                     </ul>

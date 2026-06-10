@@ -26,7 +26,16 @@ export function Navbar() {
 
         const el = document.getElementById(hash)
         if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+           
+            if (mobileOpen) {
+                setOpenDropdown(null)
+                setMobileOpen(false)
+                setTimeout(() => {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }, 220)
+            } else {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
         }
         setOpenDropdown(null)
         setMobileOpen(false)
@@ -167,6 +176,18 @@ export function Navbar() {
                                         <span className="navbar__mobile-group-label">{item.label}</span>
                                         {item.children.map((child, index) => {
                                             const isExt = child.external || child.href.includes('.html');
+                                            if (child.href.includes('#')) {
+                                                return (
+                                                    <button
+                                                        key={`${child.href}-${child.label}-${index}`}
+                                                        onClick={() => scrollToSection(child.href)}
+                                                        className="navbar__mobile-child"
+                                                    >
+                                                        {child.label}
+                                                    </button>
+                                                )
+                                            }
+
                                             return isExt ? (
                                                 <a
                                                     key={`${child.href}-${child.label}-${index}`}
@@ -189,7 +210,16 @@ export function Navbar() {
                                         })}
                                     </div>
                                 ) : (
-                                    item.external || item.href.includes('.html') ? (
+                                    // Si el href contiene un hash, usar scroll suave en móvil
+                                    item.href.includes('#') ? (
+                                        <button
+                                            key={`${item.href}-${item.label}`}
+                                            onClick={() => scrollToSection(item.href)}
+                                            className={cn('navbar__mobile-link', pathname === item.href && 'nav-link--active')}
+                                        >
+                                            {item.label}
+                                        </button>
+                                    ) : item.external || item.href.includes('.html') ? (
                                         <a
                                             key={`${item.href}-${item.label}`}
                                             href={item.href}

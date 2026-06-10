@@ -378,6 +378,26 @@ navbar--scrolled { box-shadow: var(--shadow-lg); }
     background-color: rgba(255, 255, 255, 0.12);
 }
 
+/* Reset default button appearance for mobile menu buttons so they
+   behave like links (transparent background, no borders) */
+button.navbar__mobile-child,
+button.navbar__mobile-link {
+    background: none;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    text-align: left;
+    width: 100%;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+button.navbar__mobile-child:hover,
+button.navbar__mobile-link:hover {
+    color: white;
+    background-color: rgba(255,255,255,0.1);
+}
+
 button.nav-dropdown__item {
     width: 100%;
     text-align: left;
