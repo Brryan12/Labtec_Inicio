@@ -26,6 +26,15 @@
     @apply text-xl font-bold mt-2 mb-3;
     color: var(--color-red);
 }
+.blog-post__title-link {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s, text-decoration 0.2s;
+}
+.blog-post__title-link:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
 .blog-post__excerpt  { @apply leading-relaxed; color: var(--color-dark-gray); }
 .blog-post__tags     { @apply flex gap-2 mt-4; }
 .blog-post__tag      { @apply text-xs px-2 py-1 rounded; background-color: rgba(139,0,0,.08); color: var(--color-red); }

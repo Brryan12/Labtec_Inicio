@@ -1,0 +1,139 @@
+@reference "../../index.css";
+
+/* ============================================
+   CURSO SAR PAGE — páginas/CursoSar.tsx
+   ============================================ */
+
+.curso-sar-page {
+    @apply min-h-screen pb-16;
+}
+
+.curso-sar__container {
+    @apply max-w-7xl mx-auto px-4 mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8;
+}
+
+/* Columna de Contenido Principal */
+.curso-sar__main {
+    @apply lg:col-span-2 space-y-8;
+}
+
+.curso-sar__section {
+    @apply bg-white p-6 md:p-8 rounded-xl border border-gray-100 shadow-xs;
+}
+
+.curso-sar__section-title {
+    @apply text-2xl font-bold mb-4 pb-2 border-b border-gray-100;
+    color: var(--color-una-navy);
+}
+
+.curso-sar__image-container {
+    @apply rounded-xl overflow-hidden mb-6 border border-gray-200 shadow-sm;
+}
+
+.curso-sar__image {
+    @apply w-full h-auto object-cover;
+}
+
+.curso-sar__description {
+    @apply text-base leading-relaxed text-gray-700 space-y-4;
+}
+
+/* Columna Lateral (Sidebar) */
+.curso-sar__sidebar {
+    @apply space-y-6;
+}
+
+.curso-sar__card {
+    @apply bg-white p-6 rounded-xl border border-gray-100 shadow-sm;
+}
+
+.curso-sar__card-title {
+    @apply text-lg font-bold mb-4 flex items-center gap-2;
+    color: var(--color-una-red);
+}
+
+.curso-sar__details-list {
+    @apply space-y-4;
+}
+
+.curso-sar__detail-item {
+    @apply flex items-start gap-3;
+}
+
+.curso-sar__detail-icon {
+    @apply text-red-700 mt-1 flex-shrink-0;
+}
+
+.curso-sar__detail-content {
+    @apply text-sm;
+}
+
+.curso-sar__detail-label {
+    @apply font-semibold block text-gray-800;
+}
+
+.curso-sar__detail-value {
+    @apply text-gray-600;
+}
+
+/* Agenda / Cronograma */
+.curso-sar__agenda {
+    @apply space-y-6;
+}
+
+.curso-sar__agenda-day {
+    @apply border border-gray-100 rounded-lg overflow-hidden;
+}
+
+.curso-sar__agenda-day-header {
+    @apply bg-red-900 text-white px-4 py-3 font-bold text-sm md:text-base flex justify-between items-center;
+}
+
+.curso-sar__agenda-table-wrapper {
+    @apply overflow-x-auto;
+}
+
+.curso-sar__agenda-table {
+    @apply w-full text-left text-sm border-collapse;
+}
+
+.curso-sar__agenda-table th {
+    @apply bg-gray-50 px-4 py-3 font-semibold text-gray-700 border-b border-gray-100;
+}
+
+.curso-sar__agenda-table td {
+    @apply px-4 py-3 border-b border-gray-100 text-gray-600;
+}
+
+.curso-sar__agenda-table tr:last-child td {
+    @apply border-b-0;
+}
+
+/* Visor de PDF y Botón */
+.curso-sar__pdf-container {
+    @apply w-full h-[600px] rounded-lg overflow-hidden border border-gray-200 mt-4;
+}
+
+.curso-sar__pdf-iframe {
+    @apply w-full h-full border-0;
+}
+
+.curso-sar__download-btn {
+    @apply w-full flex items-center justify-center gap-2 border border-gray-300 bg-white font-bold py-3 px-4 rounded-lg shadow-sm;
+    color: var(--color-una-dark-gray);
+    transition: none;
+}
+
+.curso-sar__download-btn:hover {
+    color: var(--color-una-red);
+    background-color: white;
+}
+
+.curso-sar__back-link {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-red-700 hover:text-red-800 transition-colors mb-6;
+    color: var(--color-una-red);
+}
+
+.curso-sar__back-link:hover {
+    color: var(--color-una-red-dark);
+}
